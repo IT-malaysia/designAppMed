@@ -28,7 +28,6 @@
     "flot.tooltip": "~0.7.1",
     "jquery-ui": "~1.11.0",
     "easypie": "~2.1.4",
-    "doT": "~1.0.1",
     "text": "~2.0.12"
   },
   "devDependencies": {
