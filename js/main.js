@@ -5,6 +5,8 @@ require.config({
         'jquery' : 'jquery/dist/jquery',
         'underscore' : 'underscore/underscore',
         'backbone' : 'backbone/backbone',
+        'text' : 'text/text',
+        'doT' : 'doT/doT',
         'bootstrap' : 'bootstrap/dist/js/bootstrap',
         'initscript' : '../js/scripts',
         'dcjqaccordion': 'jquery-dcjqaccordion/jquery.dcjqaccordion',
@@ -25,16 +27,16 @@ require.config({
             deps : ['underscore', 'jquery'],
             //Once loaded, use the global 'Backbone' as the
             //module value.
-            exports : 'Backbone'
+            //exports : 'Backbone'
         },
         'underscore' : {
-            exports : '_'
+           // exports : '_'
         },
         'bootstrap' : {
             deps : ['jquery']
         },
         'initscript' : {
-            deps : ['jquery']
+            deps : ['jquery','bootstrap']
         },
         'dcjqaccordion' : {
             deps : ['jquery']
@@ -72,9 +74,10 @@ require.config({
 define([
     'jquery',
     'backbone',
+    '../js/router',
+    'bootstrap',
     'initscript',
     'dcjqaccordion',
-    'bootstrap',
     'scrollTo',
     'slimscroll',
     'nicescroll',
@@ -82,12 +85,10 @@ define([
     'flot-tooltip',
     'flot-pie',
     'flot-resize',
-    'easypiechart',
+    'easypiechart'
 ],
-    function ($,Backbone,initscript) {
-        //jQuery, canvas and the app/sub module are all
-        //loaded and can be used here now.
-        var numbers = [10, 5, 100, 2, 1000];
+    function ($,Backbone,Router) {
 
-        console.log(_.min(numbers));
+        new Router();
+        Backbone.history.start({root: "/sench/medecin/"});
 });
